@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+<title>疫情申报</title>
+</head>
+<body>
+
+<form>
+所有人员: <input type="text" name="people" id="id1" size="35"><br>
+成语接龙: <input type="text" name="long" id="id2" size="35"><br>
+<button onclick="myFunction()">检查</button>
+<script>
+var renyuan = "朱明丹,季臻,刘峰松,王旭,潘震,杨波,刘勇,李鹏飞,马祥瑞,杨青青,顾成高,孙兆虎,馬原,李鹏飞,陈浩,王盈文,赵锋,欧文勤,陶传雨,唐可焓,郑枫,孙桂杰,赵振宇,顾轩源"
+document.getElementById('id1').value=renyuan;
+res=[]
+function myFunction(){
+	pep = document.getElementById("id1").value.replace(" ","")
+	jie = document.getElementById("id2").value
+	
+	var listpep = pep.split(",")
+	for(var i=0;i<listpep.length;i++){
+	if (jie.search(listpep[i].replace(" ","")) == -1 ) {
+		res.push(listpep[i].replace(" ",""))
+	}
+    
+}
+window.alert(res);
+	
+}
+</script>
+</form>
+ 
+</body>
+</html>
